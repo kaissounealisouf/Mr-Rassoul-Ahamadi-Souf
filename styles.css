@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Sacramento&display=swap");
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    border-radius: 2em;
+    background: #e0e0e0;
+    box-shadow: 2px 2px 3px #bebebe,
+                -2px -2px 3px #ffffff;
+    overflow: hidden;
+}
+
+.invitation-card {
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    background-image: url(".png");
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5em;
+    background: #e0e0e0;
+    box-shadow: 2px 2px 3px #bebebe,
+                -2px -2px 3px #ffffff;
+    overflow: hidden;
+}
+
+header, .families, .couple, .events, footer {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Glassmorphism and lovely style for Mr and Mrs */
+.couple h2 {
+    font-size: 2em;
+    margin: 10px 0;
+     
+     box-shadow: 2px 3px #bebebe,
+              -2px -2px 3px #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.couple h2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+    animation: shine 2s ease-in-out infinite;
+    z-index: 0; /* Place behind the text */
+}
+
+.invite-text {
+    font-size: 1.5em;
+    color: white; /* Soft pink for romance */
+    margin-top: 15px;
+    font-family: 'Sacramento', cursive;
+    font-style: italic;
+    border-radius: 10px;
+    padding: 10px;
+    border-radius: 12em;
+    border-radius: 50px;
+background: black;
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
+/* Shine effect for the text */
+@keyframes shine {
+    0% {
+        background-position: -200%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+.couple {
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Sacramento', cursive;
+    color: #ff6f61; /* Lovely heartful color */
+}
+
+.couple h2 {
+    font-size: 2em;
+    margin: 10px 0;
+    color: #ff6f61; /* Romantic red */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.couple p {
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Subtle heart decoration */
+.couple::before {
+    content: '♥';
+    font-size: 5em;
+    color: #ff6f61;
+    position: absolute;
+    top: 600px;
+    left: 239px;
+    animation: floatHeart 3s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 8px;
+    text-align: center;
+    color: #fff;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 1em;
+    border-radius: 98px;
+    background: #e0e0e0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: -2px 2px 3px #bebebe,
+                2px -2px 3px #ffffff;
+}
+
+/* Confetti animation */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.confetti {
+    position: absolute;
+    width: 6px; /* Smaller width */
+    height: 12px; /* Smaller height */
+    background-color: #FFD700;
+    transform: rotate(45deg);
+    animation: confetti-fall 2s infinite linear;
+    z-index: -1;
+}
+
+/* Adjust the falling animation to enhance the effect */
+@keyframes confetti-fall {
+    0% { transform: rotate(45deg) translateY(0); }
+    100% { transform: rotate(45deg) translateY(100vh); }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .invite-text {
+        font-size: 1.2em;
+    }
+
+    .couple h2 {
+        font-size: 1.5em;
+    }
+
+    .couple p {
+        font-size: 0.9em;
+    }
+
+    .couple::before {
+        font-size: 4em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .invitation-card {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .invite-text {
+        font-size: 1em;
+    }
+
+    .couple h2 {
+        font-size: 1.2em;
+    }
+
+    .couple p {
+        font-size: 0.8em;
+    }
+
+    .couple::before {
+        font-size: 3em;
+    }
+}
